@@ -2,7 +2,7 @@ import _ from 'lodash';
 import './style.css';
 import addItem from './modules/addItem.js'
 import options from '/src/assets/options.png'
-
+import bin from '/src/assets/recyclebin.png'
 
   const todoList=[
     {
@@ -35,7 +35,19 @@ import options from '/src/assets/options.png'
       //  liList.setAttribute('id',);
         liList.textContent=todoList[x].description;
         const option=document.createElement('img');
+        
         option.src=options;
+        option.addEventListener('click', function(){
+
+          option.style.display='none';
+          const bin=document.createElement('img');
+         bin=src.bin;
+        //   recyclebin.src=recyclebin;
+        //   divContainer.appendChild(recyclebin);
+        //   ulList.appendChild(divContainer)
+        // option.src=recyclebin;
+        // option.style.display='block';
+         });
         
         divContainer.appendChild(checkbox);
         divContainer.appendChild(liList);
