@@ -8,6 +8,7 @@ if (!ulContainer) {
     return;
   }
 
+  
 const newItem= document.createElement('li');
 newItem.textContent="hello world";
 console.log('i was called');
