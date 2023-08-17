@@ -35,17 +35,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _icon_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icon.png */ \"./src/icon.png\");\n\r\n\r\n\r\n\r\nfunction component() {\r\n    const element = document.createElement('div');\r\n  \r\n    \r\n    \r\n  // Lodash, now imported by this script\r\n    element.innerHTML = lodash__WEBPACK_IMPORTED_MODULE_0___default().join(['Hello', 'webpack'], ' ');\r\n    element.classList.add('hello');\r\n  \r\n// Add the image to our existing div.\r\nconst myIcon = new Image();\r\nmyIcon.src = _icon_png__WEBPACK_IMPORTED_MODULE_2__;\r\n\r\nelement.appendChild(myIcon);\r\n\r\n\r\n    return element;\r\n  }\r\n  \r\n  document.body.appendChild(component());\n\n//# sourceURL=webpack://webpacksetup/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_addItem_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/addItem.js */ \"./src/modules/addItem.js\");\n\r\n\r\n\r\n\r\n\r\n  const todoList=[\r\n    {\r\n      descritpion: 'wash dishes',\r\n      completed:false,\r\n      index: 0\r\n    },\r\n    {\r\n      description: 'wash clothes',\r\n      completed:false,\r\n      index: 1\r\n    }\r\n  ];\r\n\r\n  const populateList = () => {\r\n    alert(\"hello world\");\r\n   const parent= document.getElementById('populate');\r\n   const ulList= document.createElement('ul');\r\n    for(let x=0; x< todoList.length; x += 1)\r\n    {      \r\n      if (todoList[x].completed===false) \r\n      {\r\n       const liList=document.createElement('li');\r\n      //  liList.setAttribute('id',);\r\n        liList.textContent=todoList[x].description;\r\n        ulList.appendChild(liList);\r\n        \r\n      }  \r\n      \r\n      \r\n    }\r\n\r\n    parent.appendChild(ulList);\r\n  }\r\n  \r\n  document.addEventListener('DOMContentLoaded', populateList);\r\n  \n\n//# sourceURL=webpack://webpacksetup/./src/index.js?");
 
 /***/ }),
 
-/***/ "./src/icon.png":
-/*!**********************!*\
-  !*** ./src/icon.png ***!
-  \**********************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ "./src/modules/addItem.js":
+/*!********************************!*\
+  !*** ./src/modules/addItem.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"bcc572ea910270c4c3d6.png\";\n\n//# sourceURL=webpack://webpacksetup/./src/icon.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst addItem = () => {\r\n\r\nconst container =document.getElementById('container');\r\nconst ulContainer =document.getElementById('todolist');  \r\n\r\nif (!ulContainer) {\r\n    console.error(\"Cannot find 'todolist' element.\");\r\n    return;\r\n  }\r\n\r\n  \r\nconst newItem= document.createElement('li');\r\nnewItem.textContent=\"hello world\";\r\nconsole.log('i was called');\r\nalert('adding item');\r\n\r\nulContainer.appendChild(newItem);\r\ncontainer.appendChild(ulContainer);\r\nconst enter=document.getElementById('enter');\r\nenter.addEventListener('click', addItem);\r\n\r\n\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addItem);\n\n//# sourceURL=webpack://webpacksetup/./src/modules/addItem.js?");
 
 /***/ })
 
