@@ -17,7 +17,7 @@ plugins: [
 ],
 
   output: {
-    filename: '[name].[contenthash].js', // Use [name].[contenthash].js 'bundle.js',
+    filename: '[name].bundle.js', // Use [name].[contenthash].js 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
