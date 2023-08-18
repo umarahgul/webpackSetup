@@ -1,25 +1,28 @@
 import './style.css';
 
 import options from './assets/options.png';
-import bin from './assets/recyclebin.png';
-import curdFunctionality from './curd.js'
+import {curdFunctionality, removeVal} from './curd.js'
+import { saveTodoListToLocalStorage, retrieveTodoListFromLocalStorage } from './curd.js';
+import { div } from 'prelude-ls';
 
-export const todoList = [
-  {
-    description: 'wash dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'wash clothes',
-    completed: false,
-    index: 1,
-  },
-];
+export const todoList = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Retrieve todoList from local storage
+  retrieveTodoListFromLocalStorage();
+
+  // Populate the list
+  populateList();
+  curdFunctionality();
+});
+
 
 export const populateList = () => {
+  
+
   const parent = document.getElementById('populate');
   parent.innerHTML = '';
+  saveTodoListToLocalStorage();
   const ulList = document.createElement('ul');
   ulList.classList.add('ulList');
   for (let x = 0; x < todoList.length; x += 1) {
@@ -38,21 +41,24 @@ export const populateList = () => {
       liList.textContent = todoList[x].description;
       const option = document.createElement('img');
       option.classList.add('three-dots');
-
       option.src = options;
+      removeVal(option,divContainer,x);
 
-      option.addEventListener('click', () => {
-        option.style.display = 'none';
-        const rbin = document.createElement('img');
-        rbin.src = bin;
+      // option.addEventListener('click', () => {
+    
+      //   option.style.display = 'none';
+      //   const rbin = document.createElement('img');
+      //   rbin.src = bin;
 
-        divContainer.appendChild(rbin);
+      //   divContainer.appendChild(rbin);
 
-        rbin.addEventListener('click', () => {
-          document.getElementById(`id${x}`).remove();
-          rbin.style.display = 'none';
-        });
-      });
+      //   rbin.addEventListener('click', () => {
+      //     document.getElementById(`id${x}`).remove();
+      //     rbin.style.display = 'none';
+      //   });
+      // });
+
+
       divSmall.appendChild(checkbox);
       divSmall.appendChild(liList);
       divContainer.appendChild(divSmall);
