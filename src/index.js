@@ -2,7 +2,7 @@ import './style.css';
 
 import options from './assets/options.png';
 import bin from './assets/recyclebin.png';
-
+import curdFunctionality from 'curd.js'
 const todoList = [
   {
     description: 'wash dishes',
@@ -63,17 +63,18 @@ const populateList = () => {
 };
 
 document.addEventListener('DOMContentLoaded', populateList);
+curdFunctionality();
 
-const val = document.getElementById('inputVal');
-val.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    const newItem = {
-      description: val.value,
-      completed: false,
-      index: todoList.length, // Set the index to the next available index
-    };
-    todoList.push(newItem);
-    val.value = '';
-    populateList();
-  }
-});
+// const val = document.getElementById('inputVal');
+// val.addEventListener('keypress', (event) => {
+//   if (event.key === 'Enter') {
+//     const newItem = {
+//       description: val.value,
+//       completed: false,
+//       index: todoList.length, // Set the index to the next available index
+//     };
+//     todoList.push(newItem);
+//     val.value = '';
+//     populateList();
+//   }
+// });
