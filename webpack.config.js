@@ -4,17 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    index:'./src/index.js',
-},
+    index: './src/index.js',
+  },
 
-devServer: {
-  static: './dist',
-},
-plugins: [
-  new HtmlWebpackPlugin({
-    template: './src/index.html',
-  }),
-],
+  devServer: {
+    static: './dist',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
 
   output: {
     filename: '[name].bundle.js', // Use [name].[contenthash].js 'bundle.js',
@@ -37,7 +37,7 @@ plugins: [
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
-     
+
     ],
   },
 };
