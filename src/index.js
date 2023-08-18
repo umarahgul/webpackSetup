@@ -1,6 +1,5 @@
 import './style.css';
 
-
 import options from './assets/options.png';
 import bin from './assets/recyclebin.png';
 
@@ -18,8 +17,6 @@ const todoList = [
 ];
 
 const populateList = () => {
-
-
   const parent = document.getElementById('populate');
   parent.innerHTML = '';
   const ulList = document.createElement('ul');
@@ -49,7 +46,6 @@ const populateList = () => {
         rbin.src = bin;
 
         divContainer.appendChild(rbin);
-       
 
         rbin.addEventListener('click', () => {
           document.getElementById(`id${x}`).remove();
