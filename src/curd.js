@@ -11,8 +11,6 @@ export const saveTodoListToLocalStorage = () => {
 export const retrieveTodoListFromLocalStorage = () => {
   const storedTodoList = localStorage.getItem('todoList');
   if (storedTodoList) {
-    // const parsedTodoList = JSON.parse(storedTodoList);
-    // Array.prototype.push.apply(todoList, parsedTodoList);
     return JSON.parse(storedTodoList);
   }
   return [];
@@ -25,10 +23,11 @@ export const curdFunctionality = () => {
       const newItem = {
         description: val.value,
         completed: false, // value of new object set to fasle by default
-        index: todoList.length, // Set the index to the next available index
+        index: todoList.length + 1, // Set the index to the next available index
       };
       todoList.push(newItem);
       val.value = '';
+
       populateList();
       saveTodoListToLocalStorage();
     }
@@ -50,9 +49,25 @@ export const removeVal = (optionElement, divContainer, x) => {
 
       for (let y = 0; y < todoList.length; y += 1) {
         todoList[y].index = y + 1;
+        console.log(todoList[y].index);
       }
 
       saveTodoListToLocalStorage();
     });
   });
 };
+
+export function editDescp(x) {
+  const newDescription = prompt(`Enter a new description: ${x}`);
+
+  if (newDescription !== null && newDescription !== '') {
+    // Update the description in the todoList array
+    todoList[x].description = newDescription;
+
+    // Re-populate the list to reflect the changes
+    populateList();
+
+    // Save the updated todoList to local storage
+    saveTodoListToLocalStorage();
+  }
+}

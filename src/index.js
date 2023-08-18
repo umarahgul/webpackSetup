@@ -4,7 +4,7 @@ import options from './assets/options.png';
 import {
   curdFunctionality,
   removeVal,
-  saveTodoListToLocalStorage,
+  editDescp,
   retrieveTodoListFromLocalStorage,
 } from './curd.js';
 
@@ -15,7 +15,7 @@ export const populateList = () => {
   parent.innerHTML = '';
   const ulList = document.createElement('ul');
   ulList.classList.add('ulList');
-  const storedTodoList = retrieveTodoListFromLocalStorage();
+  //  const storedTodoList = retrieveTodoListFromLocalStorage();
   for (let x = 0; x < todoList.length; x += 1) {
     if (todoList[x].completed === false) {
       const divContainer = document.createElement('div');
@@ -28,7 +28,9 @@ export const populateList = () => {
 
       const liList = document.createElement('li');
       liList.classList.add('liList');
-
+      liList.setAttribute('id', `descp${x}`);
+      liList.addEventListener('click', () => { editDescp(x); });
+      // editDescp(x);
       liList.textContent = todoList[x].description;
       const option = document.createElement('img');
       option.classList.add('three-dots');
