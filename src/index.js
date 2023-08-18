@@ -2,8 +2,9 @@ import './style.css';
 
 import options from './assets/options.png';
 import bin from './assets/recyclebin.png';
-import curdFunctionality from 'curd.js'
-const todoList = [
+import curdFunctionality from './curd.js'
+
+export const todoList = [
   {
     description: 'wash dishes',
     completed: false,
@@ -16,7 +17,7 @@ const todoList = [
   },
 ];
 
-const populateList = () => {
+export const populateList = () => {
   const parent = document.getElementById('populate');
   parent.innerHTML = '';
   const ulList = document.createElement('ul');

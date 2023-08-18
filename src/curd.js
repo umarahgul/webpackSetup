@@ -1,3 +1,5 @@
+import {todoList, populateList} from './index.js'
+
 const curdFunctionality = () => {
 
     const val = document.getElementById('inputVal');
@@ -11,6 +13,7 @@ const curdFunctionality = () => {
         todoList.push(newItem);
         val.value = '';
         populateList();
+      
       }
     });
     
