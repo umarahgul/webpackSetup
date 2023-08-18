@@ -1,15 +1,17 @@
 /* eslint-disable import/no-cycle */
-// import {  populateList } from './index.js';
-import bin from './assets/recyclebin.png';
-import {populateList,todoList} from './todo.js'
-//import { removeVal } from './utilis.js'; // Import from utilis.js
 
-export const saveTodoListToLocalStorage = () => {
+
+import { populateList } from './index.js';
+import bin from './assets/recyclebin.png';
+import todoList from './todoList.js'
+
+export const  hell = () => {
+ const saveTodoListToLocalStorage = () => {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 };
 
 // Function to retrieve the todoList from local storage
-export const retrieveTodoListFromLocalStorage = () => {
+const retrieveTodoListFromLocalStorage = () => {
   const storedTodoList = localStorage.getItem('todoList');
   if (storedTodoList) {
     return JSON.parse(storedTodoList);
@@ -17,7 +19,7 @@ export const retrieveTodoListFromLocalStorage = () => {
   return [];
 };
 
-export const curdFunctionality = () => {
+const curdFunctionality = () => {
   const val = document.getElementById('inputVal');
  
   const storedValue = localStorage.getItem('inputValue');
@@ -37,14 +39,14 @@ export const curdFunctionality = () => {
       
       todoList.push(newItem);
       
-      
+      alert('hello baby');      
       saveTodoListToLocalStorage();
       populateList();
       val.value = '';
     }
   });
 };
-export const removeVal = ( optionElement, divContainer, x) => {
+const removeVal = ( optionElement, divContainer, x) => {
   optionElement.addEventListener('click', () => {
     optionElement.style.display = 'none';
     const rbin = document.createElement('img');
@@ -67,7 +69,7 @@ export const removeVal = ( optionElement, divContainer, x) => {
   });
 };
 
-export function editDescp( x) {
+function editDescp( x) {
   const newDescription = prompt(`Enter a new description: ${x}`);
 
   if (newDescription !== null && newDescription !== '') {
@@ -80,4 +82,5 @@ export function editDescp( x) {
     // Save the updated todoList to local storage
     saveTodoListToLocalStorage();
   }
+}
 }
