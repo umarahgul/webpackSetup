@@ -1,28 +1,18 @@
 import './style.css';
-
+/* eslint-disable import/no-cycle */
 import options from './assets/options.png';
-import {curdFunctionality, removeVal} from './curd.js'
-import { saveTodoListToLocalStorage, retrieveTodoListFromLocalStorage } from './curd.js';
-import { div } from 'prelude-ls';
+import {
+  curdFunctionality,
+  removeVal,
+  saveTodoListToLocalStorage,
+  retrieveTodoListFromLocalStorage,
+} from './curd.js';
 
 export const todoList = [];
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Retrieve todoList from local storage
-  retrieveTodoListFromLocalStorage();
-
-  // Populate the list
-  populateList();
-  curdFunctionality();
-});
-
-
 export const populateList = () => {
-  
-
   const parent = document.getElementById('populate');
   parent.innerHTML = '';
-  saveTodoListToLocalStorage();
   const ulList = document.createElement('ul');
   ulList.classList.add('ulList');
   for (let x = 0; x < todoList.length; x += 1) {
@@ -42,22 +32,7 @@ export const populateList = () => {
       const option = document.createElement('img');
       option.classList.add('three-dots');
       option.src = options;
-      removeVal(option,divContainer,x);
-
-      // option.addEventListener('click', () => {
-    
-      //   option.style.display = 'none';
-      //   const rbin = document.createElement('img');
-      //   rbin.src = bin;
-
-      //   divContainer.appendChild(rbin);
-
-      //   rbin.addEventListener('click', () => {
-      //     document.getElementById(`id${x}`).remove();
-      //     rbin.style.display = 'none';
-      //   });
-      // });
-
+      removeVal(option, divContainer, x);
 
       divSmall.appendChild(checkbox);
       divSmall.appendChild(liList);
@@ -67,21 +42,13 @@ export const populateList = () => {
     }
   }
   parent.appendChild(ulList);
+  saveTodoListToLocalStorage();
 };
 
 document.addEventListener('DOMContentLoaded', populateList);
-curdFunctionality();
 
-// const val = document.getElementById('inputVal');
-// val.addEventListener('keypress', (event) => {
-//   if (event.key === 'Enter') {
-//     const newItem = {
-//       description: val.value,
-//       completed: false,
-//       index: todoList.length, // Set the index to the next available index
-//     };
-//     todoList.push(newItem);
-//     val.value = '';
-//     populateList();
-//   }
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  // Retrieve todoList from local storage
+  retrieveTodoListFromLocalStorage();
+  curdFunctionality();
+});
