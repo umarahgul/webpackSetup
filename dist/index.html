@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>to do list</title>
-<script defer src="runtime.bundle.js"></script><script defer src="vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_noSo-e1ba01.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+<script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
 <body>
-    <section class="container_list">
-        <ul class="todolist">
-            <li id="title"> Today's to do</li>
-            <li> <label> <input type="text" id="addlistitem" class="listinput"  placeholder="Add to your list..."></label></li>
-    </ul>
+    <section class="container_list" id="container">
+        <div class="listStyle">Today's To Do </div>
+        <hr>
+        <div class="addListitem"><input type="text" placeholder="add to your list" class="inputNew" id="inputVal"></div>
+        <div class="divider"></div>
+        <div id="populate" class="populateList">
+            <!-- populate list here --> 
+         </div>
+         <hr>
+         <div class="clearAll" id="clearAll">Clear all completed</div>
     </section>
+    
 </body>
 </html>
