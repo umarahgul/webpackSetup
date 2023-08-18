@@ -36,7 +36,7 @@ export const curdFunctionality = () => {
       
       todoList.push(newItem);
       
-      localStorage.setItem('inputValue', val.value);
+      
       saveTodoListToLocalStorage();
       populateList();
       val.value = '';
