@@ -48,10 +48,11 @@ export const populateList = () => {
   // saveTodoListToLocalStorage();
 };
 
-document.addEventListener('DOMContentLoaded', populateList);
+
 
 document.addEventListener('DOMContentLoaded', () => {
   // Retrieve todoList from local storage
   retrieveTodoListFromLocalStorage();
   curdFunctionality();
 });
+document.addEventListener('DOMContentLoaded', populateList);

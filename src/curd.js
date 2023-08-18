@@ -18,6 +18,13 @@ export const retrieveTodoListFromLocalStorage = () => {
 
 export const curdFunctionality = () => {
   const val = document.getElementById('inputVal');
+ 
+  const storedValue = localStorage.getItem('inputValue');
+  if (storedValue) {
+    val.value = storedValue;
+  }
+ 
+ 
   val.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
       const newItem = {
@@ -25,9 +32,13 @@ export const curdFunctionality = () => {
         completed: false, // value of new object set to fasle by default
         index: todoList.length + 1, // Set the index to the next available index
       };
-      todoList.push(newItem);
-      val.value = '';
+      
 
+       
+      
+      todoList.push(newItem);
+      //val.value = '';
+      localStorage.setItem('inputValue', val.value);
       populateList();
       saveTodoListToLocalStorage();
     }
