@@ -11,9 +11,11 @@ export const saveTodoListToLocalStorage = () => {
 export const retrieveTodoListFromLocalStorage = () => {
   const storedTodoList = localStorage.getItem('todoList');
   if (storedTodoList) {
-    const parsedTodoList = JSON.parse(storedTodoList);
-    Array.prototype.push.apply(todoList, parsedTodoList);
+    // const parsedTodoList = JSON.parse(storedTodoList);
+    // Array.prototype.push.apply(todoList, parsedTodoList);
+    return JSON.parse(storedTodoList);
   }
+  return [];
 };
 
 export const curdFunctionality = () => {
@@ -47,7 +49,7 @@ export const removeVal = (optionElement, divContainer, x) => {
       todoList.splice(x, 1);
 
       for (let y = 0; y < todoList.length; y += 1) {
-        todoList[y].index = y;
+        todoList[y].index = y + 1;
       }
 
       saveTodoListToLocalStorage();

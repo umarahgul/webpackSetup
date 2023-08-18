@@ -15,6 +15,7 @@ export const populateList = () => {
   parent.innerHTML = '';
   const ulList = document.createElement('ul');
   ulList.classList.add('ulList');
+  const storedTodoList = retrieveTodoListFromLocalStorage();
   for (let x = 0; x < todoList.length; x += 1) {
     if (todoList[x].completed === false) {
       const divContainer = document.createElement('div');
@@ -42,7 +43,7 @@ export const populateList = () => {
     }
   }
   parent.appendChild(ulList);
-  saveTodoListToLocalStorage();
+  // saveTodoListToLocalStorage();
 };
 
 document.addEventListener('DOMContentLoaded', populateList);
