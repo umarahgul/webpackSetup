@@ -10,7 +10,6 @@ import {
 
 export const todoList = [];
 
-
 export const populateList = () => {
   const parent = document.getElementById('populate');
   parent.innerHTML = '';
@@ -31,7 +30,7 @@ export const populateList = () => {
       liList.classList.add('liList');
       liList.setAttribute('id', `descp${x}`);
       liList.addEventListener('click', () => { editDescp(x); });
-      
+
       liList.textContent = todoList[x].description;
       const option = document.createElement('img');
       option.classList.add('three-dots');
@@ -46,17 +45,13 @@ export const populateList = () => {
     }
   }
   parent.appendChild(ulList);
- 
 };
-
-
 
 document.addEventListener('DOMContentLoaded', populateList);
 document.addEventListener('DOMContentLoaded', () => {
-  
   const storedTodoList = retrieveTodoListFromLocalStorage();
-  todoList.push(...storedTodoList); 
- 
+  todoList.push(...storedTodoList);
+
   curdFunctionality();
 });
 

@@ -1,10 +1,7 @@
 /* eslint-disable import/no-cycle */
 
-
-import { todoList,populateList}  from './index.js';
+import { todoList, populateList } from './index.js';
 import bin from './assets/recyclebin.png';
-
-
 
 export const saveTodoListToLocalStorage = () => {
   localStorage.setItem('todoList', JSON.stringify(todoList));
@@ -21,13 +18,12 @@ export const retrieveTodoListFromLocalStorage = () => {
 
 export const curdFunctionality = () => {
   const val = document.getElementById('inputVal');
- 
+
   const storedValue = localStorage.getItem('inputValue');
   if (storedValue) {
     val.value = storedValue;
   }
- 
- 
+
   val.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {
       const newItem = {
@@ -35,18 +31,17 @@ export const curdFunctionality = () => {
         completed: false, // value of new object set to fasle by default
         index: todoList.length + 1, // Set the index to the next available index
       };
-      
-      
+
       todoList.push(newItem);
-      
-      alert('hello baby');      
+
+      alert('hello baby');
       saveTodoListToLocalStorage();
       populateList();
       val.value = '';
     }
   });
 };
-export const removeVal = ( optionElement, divContainer, x) => {
+export const removeVal = (optionElement, divContainer, x) => {
   optionElement.addEventListener('click', () => {
     optionElement.style.display = 'none';
     const rbin = document.createElement('img');
@@ -59,9 +54,8 @@ export const removeVal = ( optionElement, divContainer, x) => {
       rbin.style.display = 'none';
       todoList.splice(x, 1);
 
-      for (let y = 0; y <todoList.length; y += 1) {
+      for (let y = 0; y < todoList.length; y += 1) {
         todoList[y].index = y + 1;
-      
       }
 
       saveTodoListToLocalStorage();
@@ -69,7 +63,7 @@ export const removeVal = ( optionElement, divContainer, x) => {
   });
 };
 
-export function editDescp( x) {
+export function editDescp(x) {
   const newDescription = prompt(`Enter a new description: ${x}`);
 
   if (newDescription !== null && newDescription !== '') {
