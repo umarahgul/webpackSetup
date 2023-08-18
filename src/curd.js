@@ -33,14 +33,13 @@ export const curdFunctionality = () => {
         index: todoList.length + 1, // Set the index to the next available index
       };
       
-
-       
       
       todoList.push(newItem);
-      //val.value = '';
+      
       localStorage.setItem('inputValue', val.value);
-      populateList();
       saveTodoListToLocalStorage();
+      populateList();
+      val.value = '';
     }
   });
 };

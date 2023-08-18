@@ -52,7 +52,9 @@ export const populateList = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Retrieve todoList from local storage
-  retrieveTodoListFromLocalStorage();
+  const storedTodoList = retrieveTodoListFromLocalStorage();
+  todoList.push(...storedTodoList); 
+  //retrieveTodoListFromLocalStorage();
   curdFunctionality();
 });
 document.addEventListener('DOMContentLoaded', populateList);
