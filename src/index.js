@@ -1,5 +1,5 @@
 import './style.css';
-// import { checkDataType } from 'ajv/dist/compile/validate/dataType';
+
 
 import options from './assets/options.png';
 import bin from './assets/recyclebin.png';
@@ -18,7 +18,7 @@ const todoList = [
 ];
 
 const populateList = () => {
-  // alert("hello world");
+
 
   const parent = document.getElementById('populate');
   parent.innerHTML = '';
@@ -49,7 +49,7 @@ const populateList = () => {
         rbin.src = bin;
 
         divContainer.appendChild(rbin);
-        // ulList.appendChild(divContainer);
+       
 
         rbin.addEventListener('click', () => {
           document.getElementById(`id${x}`).remove();
