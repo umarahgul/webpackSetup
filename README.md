@@ -97,13 +97,7 @@ Install webpack
   cd my-project
   npm install
 ```
-### Deployment
-  
-  ```sh
-   https://umarahgul.github.io/Portfolio/  
-```
  
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,7 +109,7 @@ Install webpack
 👤 **Umarahgul**
 
 GitHub: [@umarahgul](https://github.com/umarahgul)
-LinkedIn: [umarahgul](https://www.linkedein.com/umarahgul)
+LinkedIn: [@umarahgul](https://linkedin.com/in/umarah-gul-36028a103)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
