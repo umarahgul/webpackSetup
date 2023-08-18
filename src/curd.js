@@ -5,13 +5,13 @@ import { populateList } from './index.js';
 import bin from './assets/recyclebin.png';
 import todoList from './todoList.js'
 
-export const  hell = () => {
- const saveTodoListToLocalStorage = () => {
+
+export const saveTodoListToLocalStorage = () => {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 };
 
 // Function to retrieve the todoList from local storage
-const retrieveTodoListFromLocalStorage = () => {
+export const retrieveTodoListFromLocalStorage = () => {
   const storedTodoList = localStorage.getItem('todoList');
   if (storedTodoList) {
     return JSON.parse(storedTodoList);
@@ -19,7 +19,7 @@ const retrieveTodoListFromLocalStorage = () => {
   return [];
 };
 
-const curdFunctionality = () => {
+export const curdFunctionality = () => {
   const val = document.getElementById('inputVal');
  
   const storedValue = localStorage.getItem('inputValue');
@@ -46,7 +46,7 @@ const curdFunctionality = () => {
     }
   });
 };
-const removeVal = ( optionElement, divContainer, x) => {
+export const removeVal = ( optionElement, divContainer, x) => {
   optionElement.addEventListener('click', () => {
     optionElement.style.display = 'none';
     const rbin = document.createElement('img');
@@ -69,7 +69,7 @@ const removeVal = ( optionElement, divContainer, x) => {
   });
 };
 
-function editDescp( x) {
+export function editDescp( x) {
   const newDescription = prompt(`Enter a new description: ${x}`);
 
   if (newDescription !== null && newDescription !== '') {
@@ -82,5 +82,4 @@ function editDescp( x) {
     // Save the updated todoList to local storage
     saveTodoListToLocalStorage();
   }
-}
 }
