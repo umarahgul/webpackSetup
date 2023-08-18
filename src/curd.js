@@ -1,8 +1,9 @@
 /* eslint-disable import/no-cycle */
-import { todoList, populateList } from './index.js';
+// import {  populateList } from './index.js';
 import bin from './assets/recyclebin.png';
+import {populateList,todoList} from './todo.js'
+//import { removeVal } from './utilis.js'; // Import from utilis.js
 
-// Function to save the todoList to local storage
 export const saveTodoListToLocalStorage = () => {
   localStorage.setItem('todoList', JSON.stringify(todoList));
 };
@@ -43,8 +44,7 @@ export const curdFunctionality = () => {
     }
   });
 };
-
-export const removeVal = (optionElement, divContainer, x) => {
+export const removeVal = ( optionElement, divContainer, x) => {
   optionElement.addEventListener('click', () => {
     optionElement.style.display = 'none';
     const rbin = document.createElement('img');
@@ -57,9 +57,9 @@ export const removeVal = (optionElement, divContainer, x) => {
       rbin.style.display = 'none';
       todoList.splice(x, 1);
 
-      for (let y = 0; y < todoList.length; y += 1) {
+      for (let y = 0; y <todoList.length; y += 1) {
         todoList[y].index = y + 1;
-        console.log(todoList[y].index);
+      
       }
 
       saveTodoListToLocalStorage();
@@ -67,7 +67,7 @@ export const removeVal = (optionElement, divContainer, x) => {
   });
 };
 
-export function editDescp(x) {
+export function editDescp( x) {
   const newDescription = prompt(`Enter a new description: ${x}`);
 
   if (newDescription !== null && newDescription !== '') {
