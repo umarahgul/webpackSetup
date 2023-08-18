@@ -1,9 +1,9 @@
 /* eslint-disable import/no-cycle */
 
 
-import { populateList } from './index.js';
+import { todoList,populateList}  from './index.js';
 import bin from './assets/recyclebin.png';
-import todoList from './todoList.js'
+
 
 
 export const saveTodoListToLocalStorage = () => {

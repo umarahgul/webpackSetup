@@ -8,7 +8,8 @@ import {
   retrieveTodoListFromLocalStorage,
 } from './curd.js';
 
-import todoList  from './todo.js';
+export const todoList = [];
+
 
 export const populateList = () => {
   const parent = document.getElementById('populate');
@@ -58,3 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
  
   curdFunctionality();
 });
+
+export default populateList;
