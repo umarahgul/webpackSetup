@@ -2,8 +2,14 @@ body {
   padding: 5%;
   font-size: 2rem;
   color: rgb(92, 90, 90);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family:
+    "Lucida Sans",
+    "Lucida Sans Regular",
+    "Lucida Grande",
+    "Lucida Sans Unicode",
+    Geneva,
+    Verdana,
+    sans-serif;
 }
 
 #container {
@@ -21,40 +27,41 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-
   margin: 0;
 }
+
 .divContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 94%;
-
   padding: 3%;
   margin-left: 0;
   border-bottom: solid rgb(222, 218, 218) 1px;
 }
+
 .ulList {
   width: 100%;
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
+
 .liList {
   margin-left: 0;
-  /* margin-right: 70%; */
 }
+
 .listStyle {
   padding: 3%;
   width: 94%;
   border: solid rgb(222, 218, 218) 1px;
-  margin-bottom: 0;
   color: rgb(92, 90, 90);
   font-size: 2rem;
   border-bottom: 0;
   margin: 0;
 }
+
 .clearAll {
   width: 94%;
   padding: 3%;
@@ -75,13 +82,12 @@ body {
   border: solid rgb(222, 218, 218) 1px;
   font-size: 2rem;
 }
+
 .divSmall {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  gap:5%;
-  width:20%;
-
+  gap: 5%;
+  width: 20%;
 }
-
