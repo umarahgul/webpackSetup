@@ -1,16 +1,16 @@
-import bin from "./assets/recyclebin.png";
+import bin from './assets/recyclebin.png';
 
-import options from "./assets/options.png";
+import options from './assets/options.png';
 
 export const todoList = [];
 
 export const saveTodoListToLocalStorage = () => {
-  localStorage.setItem("todoList", JSON.stringify(todoList));
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 };
 
 // Function to retrieve the todoList from local storage
 export const retrieveTodoListFromLocalStorage = () => {
-  const storedTodoList = localStorage.getItem("todoList");
+  const storedTodoList = localStorage.getItem('todoList');
   if (storedTodoList) {
     return JSON.parse(storedTodoList);
   }
@@ -18,16 +18,16 @@ export const retrieveTodoListFromLocalStorage = () => {
 };
 
 export const removeVal = (optionElement, divContainer, x) => {
-  optionElement.addEventListener("click", () => {
-    optionElement.style.display = "none";
-    const rbin = document.createElement("img");
+  optionElement.addEventListener('click', () => {
+    optionElement.style.display = 'none';
+    const rbin = document.createElement('img');
     rbin.src = bin;
 
     divContainer.appendChild(rbin);
 
-    rbin.addEventListener("click", () => {
+    rbin.addEventListener('click', () => {
       document.getElementById(`id${x}`).remove();
-      rbin.style.display = "none";
+      rbin.style.display = 'none';
       todoList.splice(x, 1);
 
       for (let y = 0; y < todoList.length; y += 1) {
@@ -40,30 +40,30 @@ export const removeVal = (optionElement, divContainer, x) => {
 };
 
 export const populateList = () => {
-  const parent = document.getElementById("populate");
-  parent.innerHTML = "";
-  const ulList = document.createElement("ul");
-  ulList.classList.add("ulList");
+  const parent = document.getElementById('populate');
+  parent.innerHTML = '';
+  const ulList = document.createElement('ul');
+  ulList.classList.add('ulList');
 
   for (let x = 0; x < todoList.length; x += 1) {
     if (todoList[x].completed === false) {
-      const divContainer = document.createElement("div");
-      divContainer.classList.add("divContainer");
-      divContainer.setAttribute("id", `id${x}`);
-      const divSmall = document.createElement("div");
-      divSmall.classList.add("divSmall");
-      const checkbox = document.createElement("input");
-      checkbox.setAttribute("type", "checkbox");
+      const divContainer = document.createElement('div');
+      divContainer.classList.add('divContainer');
+      divContainer.setAttribute('id', `id${x}`);
+      const divSmall = document.createElement('div');
+      divSmall.classList.add('divSmall');
+      const checkbox = document.createElement('input');
+      checkbox.setAttribute('type', 'checkbox');
 
-      const liList = document.createElement("li");
-      liList.classList.add("liList");
-      liList.setAttribute("id", `descp${x}`);
+      const liList = document.createElement('li');
+      liList.classList.add('liList');
+      liList.setAttribute('id', `descp${x}`);
 
       liList.textContent = todoList[x].description;
-      liList.addEventListener("click", () => {
+      liList.addEventListener('click', () => {
         const newDescription = prompt(`Enter a new description: ${x}`);
 
-        if (newDescription !== null && newDescription !== "") {
+        if (newDescription !== null && newDescription !== '') {
           // Update the description in the todoList array
           todoList[x].description = newDescription;
 
@@ -75,8 +75,8 @@ export const populateList = () => {
         }
       });
 
-      const option = document.createElement("img");
-      option.classList.add("three-dots");
+      const option = document.createElement('img');
+      option.classList.add('three-dots');
       option.src = options;
       removeVal(option, divContainer, x);
 
@@ -91,15 +91,15 @@ export const populateList = () => {
 };
 
 export const curdFunctionality = () => {
-  const val = document.getElementById("inputVal");
+  const val = document.getElementById('inputVal');
 
-  const storedValue = localStorage.getItem("inputValue");
+  const storedValue = localStorage.getItem('inputValue');
   if (storedValue) {
     val.value = storedValue;
   }
 
-  val.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+  val.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
       const newItem = {
         description: val.value,
         completed: false, // value of new object set to fasle by default
@@ -110,7 +110,7 @@ export const curdFunctionality = () => {
 
       saveTodoListToLocalStorage();
       populateList();
-      val.value = "";
+      val.value = '';
     }
   });
 };
