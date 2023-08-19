@@ -54,7 +54,7 @@ export const populateList = () => {
       divSmall.classList.add('divSmall');
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
-      checkbox.setAttribute('id',`chk${x}`);
+      checkbox.setAttribute('id', `chk${x}`);
 
       const liList = document.createElement('li');
       liList.classList.add('liList');
