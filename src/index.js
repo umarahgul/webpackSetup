@@ -6,10 +6,11 @@ import {
   retrieveTodoListFromLocalStorage,
 } from './curd.js';
 
-document.addEventListener('DOMContentLoaded', populateList);
+
 document.addEventListener('DOMContentLoaded', () => {
   const storedTodoList = retrieveTodoListFromLocalStorage();
   todoList.push(...storedTodoList);
 
   curdFunctionality();
 });
+document.addEventListener('DOMContentLoaded', populateList);
