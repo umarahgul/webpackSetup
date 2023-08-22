@@ -4,12 +4,25 @@ import {
   populateList,
   curdFunctionality,
   retrieveTodoListFromLocalStorage,
+  saveTodoListToLocalStorage,
 } from './curd.js';
+import { clearCompleted } from './status';
 
-document.addEventListener('DOMContentLoaded', populateList);
+
+
 document.addEventListener('DOMContentLoaded', () => {
+  curdFunctionality();
+  
   const storedTodoList = retrieveTodoListFromLocalStorage();
   todoList.push(...storedTodoList);
 
-  curdFunctionality();
+  const clearButton = document.querySelector('.clearAll');
+  clearButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    clearCompleted(todoList);
+  });
+  
 });
+document.addEventListener('DOMContentLoaded', populateList);
+
+

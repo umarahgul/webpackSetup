@@ -106,3 +106,7 @@ body {
   display: inline-block;
   margin-right: 3%;
 }
+
+.clearAll {
+  cursor : pointer;
+}
