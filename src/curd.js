@@ -2,7 +2,8 @@ import bin from './assets/recyclebin.png';
 
 import options from './assets/options.png';
 
-import {updateStatus, addClearButtonEventListener } from './status.js';
+import { updateStatus } from './status.js';
+
 export const todoList = [];
 
 export const saveTodoListToLocalStorage = () => {
@@ -48,7 +49,6 @@ export const populateList = () => {
 
   for (let x = 0; x < todoList.length; x += 1) {
     if (todoList[x].completed === false) {
-  
       const divContainer = document.createElement('div');
       divContainer.classList.add('divContainer');
       divContainer.setAttribute('id', `id${x}`);
@@ -57,21 +57,17 @@ export const populateList = () => {
       const checkbox = document.createElement('input');
       checkbox.setAttribute('type', 'checkbox');
       checkbox.setAttribute('data-index', x);
-      checkbox.setAttribute('id',`chk${x}`);
+      checkbox.setAttribute('id', `chk${x}`);
 
       // add event listener to the check box change
-      checkbox.addEventListener('change', function(event) {
+      checkbox.addEventListener('change', (event) => {
         // Retrieve the value of 'data-index' attribute
         const dataIndex = event.target.getAttribute('data-index');
-        alert('dataindexx ' + dataIndex);
-        // update item's object's value  for completed  key upon user actions 
+
+        // update item's object's value  for completed  key upon user actions
         // Do something with the dataIndex value
-        updateStatus(todoList,saveTodoListToLocalStorage, dataIndex);   
-        console.log(`Checkbox with data-index ${dataIndex} was changed.`);
+        updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
       });
-     
-
-
 
       const liList = document.createElement('li');
       liList.classList.add('liList');
