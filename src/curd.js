@@ -64,7 +64,7 @@ export const populateList = () => {
         // Retrieve the value of 'data-index' attribute
         const dataIndex = event.target.getAttribute("data-index");
 
-        // update item's object's value  for completed  key upon user actions
+    
         // Do something with the dataIndex value
         updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
       });
