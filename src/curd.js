@@ -49,29 +49,18 @@ export const populateList = () => {
 
   for (let x = 0; x < todoList.length; x += 1) {
     if (todoList[x].completed === false) {
-      const divContainer = document.createElement("div");
-      divContainer.classList.add("divContainer");
-      divContainer.setAttribute("id", `id${x}`);
-      const divSmall = document.createElement("div");
-      divSmall.classList.add("divSmall");
-      const checkbox = document.createElement("input");
-      checkbox.setAttribute("type", "checkbox");
+      const divContainer = document.createElement('div');
+      divContainer.classList.add('divContainer');
+      divContainer.setAttribute('id', `id${x}`);
+      const divSmall = document.createElement('div');
+      divSmall.classList.add('divSmall');
+      const checkbox = document.createElement('input');
+      checkbox.setAttribute('type', 'checkbox');
       checkbox.setAttribute("data-index", x);
-      checkbox.setAttribute("id", `chk${x}`);
 
-      // add event listener to the check box change
-      checkbox.addEventListener("change", (event) => {
-        // Retrieve the value of 'data-index' attribute
-        const dataIndex = event.target.getAttribute("data-index");
-
-    
-        // Do something with the dataIndex value
-        updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
-      });
-
-      const liList = document.createElement("li");
-      liList.classList.add("liList");
-      liList.setAttribute("id", `descp${x}`);
+      const liList = document.createElement('li');
+      liList.classList.add('liList');
+      liList.setAttribute('id', `descp${x}`);
 
       liList.textContent = todoList[x].description;
       liList.addEventListener("click", () => {

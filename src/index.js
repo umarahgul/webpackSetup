@@ -10,6 +10,7 @@ import { clearCompleted } from "./status";
 document.addEventListener("DOMContentLoaded", () => {
   curdFunctionality();
 
+document.addEventListener('DOMContentLoaded', () => {
   const storedTodoList = retrieveTodoListFromLocalStorage();
   todoList.push(...storedTodoList);
 
@@ -19,4 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
     clearCompleted(todoList);
   });
 });
-document.addEventListener("DOMContentLoaded", populateList);
+document.addEventListener('DOMContentLoaded', populateList);
+}
