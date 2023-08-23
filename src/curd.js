@@ -69,7 +69,7 @@ export const populateList = () => {
         // update item's object's value  for completed  key upon user actions
         // Do something with the dataIndex value
         updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
-        console.log(`Checkbox with data-index ${dataIndex} was changed.`);
+        
       });
 
       const liList = document.createElement('li');
