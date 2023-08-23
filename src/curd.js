@@ -2,6 +2,8 @@ import bin from './assets/recyclebin.png';
 
 import options from './assets/options.png';
 
+import { updateStatus } from './status.js';
+
 export const todoList = [];
 
 export const saveTodoListToLocalStorage = () => {
@@ -46,47 +48,58 @@ export const populateList = () => {
   ulList.classList.add('ulList');
 
   for (let x = 0; x < todoList.length; x += 1) {
-    if (todoList[x].completed === false) {
-      const divContainer = document.createElement('div');
-      divContainer.classList.add('divContainer');
-      divContainer.setAttribute('id', `id${x}`);
-      const divSmall = document.createElement('div');
-      divSmall.classList.add('divSmall');
-      const checkbox = document.createElement('input');
-      checkbox.setAttribute('type', 'checkbox');
-      checkbox.setAttribute('id', `chk${x}`);
+    const divContainer = document.createElement('div');
+    divContainer.classList.add('divContainer');
+    divContainer.setAttribute('id', `id${x}`);
+    const divSmall = document.createElement('div');
+    divSmall.classList.add('divSmall');
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
 
-      const liList = document.createElement('li');
-      liList.classList.add('liList');
-      liList.setAttribute('id', `descp${x}`);
+    checkbox.setAttribute('data-index', x);
 
-      liList.textContent = todoList[x].description;
-      liList.addEventListener('click', () => {
-        const newDescription = prompt(`Enter a new description: ${x}`);
+    checkbox.setAttribute('id', `chk${x}`);
 
-        if (newDescription !== null && newDescription !== '') {
-          // Update the description in the todoList array
-          todoList[x].description = newDescription;
+    // add event listener to the check box change
+    checkbox.addEventListener('change', (event) => {
+      // Retrieve the value of 'data-index' attribute
+      const dataIndex = event.target.getAttribute('data-index');
 
-          // Re-populate the list
-          populateList();
+      // update item's object's value  for completed  key upon user actions
+      // Do something with the dataIndex value
+      updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
+    });
 
-          // Save the updated todoList to local storage
-          saveTodoListToLocalStorage();
-        }
-      });
+    const liList = document.createElement('li');
+    liList.classList.add('liList');
+    liList.setAttribute('id', `descp${x}`);
 
-      const option = document.createElement('img');
-      option.classList.add('three-dots');
-      option.src = options;
-      removeVal(option, divContainer, x);
+    liList.textContent = todoList[x].description;
+    liList.addEventListener('click', () => {
+      const newDescription = prompt(`Enter a new description: ${x}`);
 
-      divSmall.appendChild(checkbox);
-      divSmall.appendChild(liList);
-      divContainer.appendChild(divSmall);
-      divContainer.appendChild(option);
-      ulList.appendChild(divContainer);
-    }
+      if (newDescription !== null && newDescription !== '') {
+        // Update the description in the todoList array
+        todoList[x].description = newDescription;
+
+        // Re-populate the list
+        populateList();
+
+        // Save the updated todoList to local storage
+        saveTodoListToLocalStorage();
+      }
+    });
+
+    const option = document.createElement('img');
+    option.classList.add('three-dots');
+    option.src = options;
+    removeVal(option, divContainer, x);
+
+    divSmall.appendChild(checkbox);
+    divSmall.appendChild(liList);
+    divContainer.appendChild(divSmall);
+    divContainer.appendChild(option);
+    ulList.appendChild(divContainer);
   }
   parent.appendChild(ulList);
 };
