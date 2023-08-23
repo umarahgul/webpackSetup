@@ -21,4 +21,4 @@ document.addEventListener('DOMContentLoaded', () => {
   populateList();
 });
 
-//document.addEventListener('DOMContentLoaded', populateList);
+// document.addEventListener('DOMContentLoaded', populateList);
