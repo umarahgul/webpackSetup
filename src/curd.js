@@ -48,61 +48,58 @@ export const populateList = () => {
   ulList.classList.add('ulList');
 
   for (let x = 0; x < todoList.length; x += 1) {
-    if (todoList[x].completed === false) {
-      const divContainer = document.createElement('div');
-      divContainer.classList.add('divContainer');
-      divContainer.setAttribute('id', `id${x}`);
-      const divSmall = document.createElement('div');
-      divSmall.classList.add('divSmall');
-      const checkbox = document.createElement('input');
-      checkbox.setAttribute('type', 'checkbox');
+    const divContainer = document.createElement('div');
+    divContainer.classList.add('divContainer');
+    divContainer.setAttribute('id', `id${x}`);
+    const divSmall = document.createElement('div');
+    divSmall.classList.add('divSmall');
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
 
-      checkbox.setAttribute('data-index', x);
+    checkbox.setAttribute('data-index', x);
 
-      checkbox.setAttribute('id', `chk${x}`);
+    checkbox.setAttribute('id', `chk${x}`);
 
-      // add event listener to the check box change
-      checkbox.addEventListener('change', (event) => {
-        // Retrieve the value of 'data-index' attribute
-        const dataIndex = event.target.getAttribute('data-index');
+    // add event listener to the check box change
+    checkbox.addEventListener('change', (event) => {
+      // Retrieve the value of 'data-index' attribute
+      const dataIndex = event.target.getAttribute('data-index');
 
-        // update item's object's value  for completed  key upon user actions
-        // Do something with the dataIndex value
-        updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
-        
-      });
+      // update item's object's value  for completed  key upon user actions
+      // Do something with the dataIndex value
+      updateStatus(todoList, saveTodoListToLocalStorage, dataIndex);
+    });
 
-      const liList = document.createElement('li');
-      liList.classList.add('liList');
-      liList.setAttribute('id', `descp${x}`);
+    const liList = document.createElement('li');
+    liList.classList.add('liList');
+    liList.setAttribute('id', `descp${x}`);
 
-      liList.textContent = todoList[x].description;
-      liList.addEventListener('click', () => {
-        const newDescription = prompt(`Enter a new description: ${x}`);
+    liList.textContent = todoList[x].description;
+    liList.addEventListener('click', () => {
+      const newDescription = prompt(`Enter a new description: ${x}`);
 
-        if (newDescription !== null && newDescription !== '') {
-          // Update the description in the todoList array
-          todoList[x].description = newDescription;
+      if (newDescription !== null && newDescription !== '') {
+        // Update the description in the todoList array
+        todoList[x].description = newDescription;
 
-          // Re-populate the list
-          populateList();
+        // Re-populate the list
+        populateList();
 
-          // Save the updated todoList to local storage
-          saveTodoListToLocalStorage();
-        }
-      });
+        // Save the updated todoList to local storage
+        saveTodoListToLocalStorage();
+      }
+    });
 
-      const option = document.createElement('img');
-      option.classList.add('three-dots');
-      option.src = options;
-      removeVal(option, divContainer, x);
+    const option = document.createElement('img');
+    option.classList.add('three-dots');
+    option.src = options;
+    removeVal(option, divContainer, x);
 
-      divSmall.appendChild(checkbox);
-      divSmall.appendChild(liList);
-      divContainer.appendChild(divSmall);
-      divContainer.appendChild(option);
-      ulList.appendChild(divContainer);
-    }
+    divSmall.appendChild(checkbox);
+    divSmall.appendChild(liList);
+    divContainer.appendChild(divSmall);
+    divContainer.appendChild(option);
+    ulList.appendChild(divContainer);
   }
   parent.appendChild(ulList);
 };
