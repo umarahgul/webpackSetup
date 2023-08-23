@@ -5,7 +5,7 @@ import {
   curdFunctionality,
   retrieveTodoListFromLocalStorage,
 } from './curd.js';
-import { clearCompleted } from './status';
+import { clearCompleted } from './status.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   curdFunctionality();
@@ -18,5 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     clearCompleted(todoList);
   });
+  populateList();
 });
-document.addEventListener('DOMContentLoaded', populateList);
+
+//document.addEventListener('DOMContentLoaded', populateList);
