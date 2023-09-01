@@ -58,6 +58,19 @@ describe(" Add 1 item and remove 1 item from the list ", () => {
   
 
   test("this function removes an element from the list",  () => {
+    // Mock data to add a task to the list
+    todoList.length = 0;
+
+
+// Mock the DOM elements
+   const initialTask = { description: 'Task 1', completed: false, index: 1 };
+   todoList.push(initialTask);
+    removeTask(0);   
+    expect(todoList.length).toBe(0); // The item should be removed from todoList
+
+});
+
+  test("this function removes an element from the list",  () => {
      // Mock data to add a task to the list
      todoList.length = 0;
 
