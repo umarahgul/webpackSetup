@@ -6,8 +6,7 @@
   "scripts": {
     "start": "webpack serve --open",
     "build": "webpack",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
