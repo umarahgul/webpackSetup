@@ -19,6 +19,14 @@ export const retrieveTodoListFromLocalStorage = () => {
   return [];
 };
 
+export const removeTask = (x) => {
+  todoList.splice(x, 1);
+
+  for (let y = 0; y < todoList.length; y += 1) {
+    todoList[y].index = y + 1;
+  }
+};
+
 export const removeVal = (optionElement, divContainer, x) => {
   optionElement.addEventListener('click', () => {
     optionElement.style.display = 'none';
@@ -30,22 +38,13 @@ export const removeVal = (optionElement, divContainer, x) => {
     rbin.addEventListener('click', () => {
       document.getElementById(`id${x}`).remove();
       rbin.style.display = 'none';
-      
+
       removeTask(x);
-  
+
       saveTodoListToLocalStorage();
     });
   });
 };
-
-export const removeTask = (x) =>{
-  todoList.splice(x, 1);
-
-  for (let y = 0; y < todoList.length; y += 1) {
-    todoList[y].index = y + 1;
-  }
-
-}
 
 export const populateList = () => {
   const parent = document.getElementById('populate');

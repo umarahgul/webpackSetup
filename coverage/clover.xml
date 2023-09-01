@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1693596509431" clover="3.2.0">
-  <project timestamp="1693596509432" name="All files">
+<coverage generated="1693598342049" clover="3.2.0">
+  <project timestamp="1693598342049" name="All files">
     <metrics statements="86" coveredstatements="53" conditionals="10" coveredconditionals="2" methods="14" coveredmethods="6" elements="110" coveredelements="61" complexity="0" loc="86" ncloc="86" packages="1" files="2" classes="2"/>
     <file name="curd.js" path="D:\Final\webpackSetup\src\curd.js">
       <metrics statements="73" coveredstatements="51" conditionals="10" coveredconditionals="2" methods="11" coveredmethods="6"/>
@@ -14,19 +14,19 @@
       <line num="19" count="0" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
       <line num="23" count="1" type="stmt"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
       <line num="26" count="0" type="stmt"/>
-      <line num="28" count="0" type="stmt"/>
-      <line num="30" count="0" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
       <line num="32" count="0" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
       <line num="34" count="0" type="stmt"/>
       <line num="36" count="0" type="stmt"/>
-      <line num="41" count="1" type="stmt"/>
-      <line num="42" count="1" type="stmt"/>
-      <line num="44" count="1" type="stmt"/>
-      <line num="45" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="40" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="44" count="0" type="stmt"/>
       <line num="50" count="1" type="stmt"/>
       <line num="51" count="1" type="stmt"/>
       <line num="52" count="1" type="stmt"/>
