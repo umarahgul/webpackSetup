@@ -30,16 +30,22 @@ export const removeVal = (optionElement, divContainer, x) => {
     rbin.addEventListener('click', () => {
       document.getElementById(`id${x}`).remove();
       rbin.style.display = 'none';
-      todoList.splice(x, 1);
-
-      for (let y = 0; y < todoList.length; y += 1) {
-        todoList[y].index = y + 1;
-      }
-
+      
+      removeTask(x);
+  
       saveTodoListToLocalStorage();
     });
   });
 };
+
+export const removeTask = (x) =>{
+  todoList.splice(x, 1);
+
+  for (let y = 0; y < todoList.length; y += 1) {
+    todoList[y].index = y + 1;
+  }
+
+}
 
 export const populateList = () => {
   const parent = document.getElementById('populate');
