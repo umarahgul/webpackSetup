@@ -108,8 +108,15 @@ Install webpack
 
 👤 **Umarahgul**
 
-GitHub: [@umarahgul](https://github.com/umarahgul)
-LinkedIn: [@umarahgul](https://linkedin.com/in/umarah-gul-36028a103)
+- GitHub: [@umarahgul](https://github.com/umarahgul)
+- LinkedIn: [@umarahgul](https://linkedin.com/in/umarah-gul-36028a103)
+
+
+👤 Arslan Majeed
+
+- GitHub: [@arslan49sp](https://github.com/arslan49sp)
+- Twitter: [@arslan49sp](https://twitter.com/arslan49sp)
+- LinkedIn: [Arslan Majeed](https://linkedin.com/in/arslan49sp)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
