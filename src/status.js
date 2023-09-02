@@ -21,6 +21,8 @@ export const clearCompleted = (todoList) => {
   for (let i = 0; i < maxIndex; i += 1) {
     filteredArray[i].index = i + 1;
   }
+  todoList.length = 0;
+  todoList.push(...filteredArray);
 
   localStorage.setItem('todoList', JSON.stringify(filteredArray));
 
